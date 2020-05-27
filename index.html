@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <style>
+        .page {
+            color: #7d7d7d;
+            background-color: #fff;
+            border-color: #ebebeb;
+        }
+        .gf-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(90deg, #defae3 50%, #C1EFE5 50%);
+            animation: gradient 1s ease infinite;
+        }
+        .header-sticky-wrapper {
+            height: 100px;
+            width: 100%;
+        }
+        .header-sticky-wrapper.container {
+            max-width: 100%;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            padding: 0 60px;
+        }
+        .header-sticky-wrapper.container .logo-header{
+            margin-left: 120px;
+        }
+        .header-sticky-wrapper__header-inner {
+            width: 100%;
+            height: 100%;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon {
+            height: 65px;
+            width: 65px;
+            background-color: #333333;
+            color: #fff;
+            position: relative;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon > span {
+            width: 30px;
+            margin-left: -15px;
+            display: block;
+            height: 1px;
+            left: 40%;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            margin-left: -10px;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            -ms-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            background-color: #fff;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon > span:before {
+            top: -10px;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon > span:after, .header-sticky-wrapper__header-inner .menu-icon > span:before {
+            content: '';
+            height: 1px;
+            left: 0;
+            margin: auto;
+            position: absolute;
+            right: 0;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            -ms-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            background-color: #fff;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon > span:after {
+            top: 11px;
+            right: 10px;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon:hover {
+            background-color: #6EA820;
+        }
+        .header-sticky-wrapper__header-inner .menu-icon:hover > span:after {
+            right: 0;
+        }
+        .header-sticky-wrapper__header-inner .header-customize {
+            margin: 0;
+            padding: 0;
+        }
+        .header-sticky-wrapper__header-inner .header-customize li {
+            list-style: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .header-sticky-wrapper__header-inner .header-customize li:not(:last-child){
+            padding-right: 20px;
+        }
+
+        .banner {
+            padding: 0 60px;
+            height: calc(95% - 100px);
+            position: relative;
+        }
+        .banner__left {
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+            top: 50%;
+            left: 20px;
+            position: absolute;
+            color: #000;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .banner .carousel-inner {
+            height: 100%;
+        }
+        .banner .carousel-inner .carousel-item {
+            height: 100%;
+        }
+        .banner__content {
+            height: 100%;
+        }
+        .banner__content .container {
+            height: 100%;
+        }
+        .banner__content__item {
+            height: 100%;
+        }
+        .slide-01 .banner__content__item  img {
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            animation: myfirst 5s;
+            animation-direction: alternate;
+        }
+        .slide-02 .banner__content__item img {
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            animation: myfirst2 5s;
+            animation-direction: alternate;
+        }
+        .banner__content__item-info {
+            position: absolute;
+            top: 35%;
+            /* left: 30%; */
+            color: #000;
+            z-index: 1000;
+        }
+        .banner__content__item-info .main-info {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+        }
+        .banner__content__item-info .uppercase{
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+        .banner__content__item-info__right {
+            font-size: 50px;
+            font-weight: bold;
+            position: absolute;
+            top: 35%;
+            color: #000;
+            z-index: 1000;
+            right: 20%;
+            font-family: 'Playfair Display', serif;
+        }
+        .banner__content__item-info__right > span:first-child {
+            position: absolute;
+            right: -10%;
+        }
+        #carouselExampleIndicators .carousel-indicators {
+            left: unset;
+            margin: 0;
+            right: 60px;
+            top: 0;
+        }
+        #carouselExampleIndicators .carousel-indicators li {
+            color: #000;
+            background-color: unset;
+            height: unset;
+            text-indent: unset;
+            font-family: 'Playfair Display', serif;
+        }
+        #carouselExampleIndicators .carousel-indicators li.active {
+            font-size: 30px;
+            font-style: italic;
+            /* font-family: 'Playfair Display', serif; */
+        }
+
+        .scroll-down img {
+            height: 20px;
+        }
+        @keyframes myfirst {
+            0%   {top: -500px;}
+            50%  {top: 0px;}
+            100% {top: 0}
+        }
+
+        @keyframes myfirst2 {
+            0%   {bottom: -500px;}
+            50%  {bottom: 0px;}
+            100% {bottom: 0}
+        }
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="gf-wrapper">
+            <header>
+                <div class="header-sticky-wrapper container">
+                    <div class="header-sticky-wrapper__header-inner d-flex justify-content-between align-items-center">
+                        <div class="menu-icon">
+                            <span>
+                            </span>
+                        </div>
+                        <div class="logo-header">
+                            <img src="http://themes.g5plus.net/spring-fashion/wp-content/uploads/2018/04/logo.png">
+                        </div>
+                        <ul class="header-customize d-flex">
+                            <li>
+                                <a><i class="fab fa-pagelines"></i> Login</a>
+                                <span> / </span>
+                                <a> Join</a>
+                            </li>
+                            <li>
+                               <div>
+                                <a>
+                                    <span>0</span>
+                                    <i class="fas fa-shopping-basket"></i>
+                                </a>
+                                <span>0.00</span>
+                               </div>
+                            </li>
+                            <li>
+                                <a>
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <div id="carouselExampleIndicators" class="carousel slide banner" data-ride="carousel" data-interval="3000">
+                <ol class="carousel-indicators d-flex flex-column">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" data-color="#C1EFE5">
+                      01
+                  </li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1" data-color="#fbe1ec">
+                    02
+                  </li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2" data-color="#eceda8">03</li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="banner-item slide-01">
+                        <div class="banner__left">
+                            <div>
+                                <span>Phone: 034 2333 344</span>
+                            </div>
+                            <div>
+                                <span>Info@moontheme.net</span>
+                            </div>
+                        </div>
+                        <div class="banner__content">
+                            <div class="container">
+                                <div class="banner__content__item d-flex justify-content-center">
+                                    <img src="http://themes.g5plus.net/spring-fashion/wp-content/uploads/revslider/Fashion/slider-02.png">
+                                </div>
+                                <div class="banner__content__item-info">
+                                    <div class="uppercase">Featured Collections</div>
+                                    <div class="main-info">New Collection<br> Spring</div>
+                                    <a class="uppercase"><span>Shop now</span></a>
+                                </div>
+                                <div class="banner__content__item-info__right">
+                                    <span>Fashion</span><br> <span>Show</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="banner-item slide-02">
+                        <div class="banner__left">
+                            <div>
+                                <span>Phone: 034 2333 344</span>
+                            </div>
+                            <div>
+                                <span>Info@moontheme.net</span>
+                            </div>
+                        </div>
+                        <div class="banner__content">
+                            <div class="container">
+                                <div class="banner__content__item d-flex justify-content-center">
+                                    <img src="http://themes.g5plus.net/spring-fashion/wp-content/uploads/revslider/Fashion/slider-01.png">
+                                </div>
+                                <div class="banner__content__item-info">
+                                    <div class="uppercase">Featured Collections</div>
+                                    <div class="main-info">New Collection<br> Spring</div>
+                                    <a class="uppercase"><span>Shop now</span></a>
+                                </div>
+                                <div class="banner__content__item-info__right">
+                                    <span>Fashion</span><br> <span>Show</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="banner-item">
+                        <div class="banner__left">
+                            <div>
+                                <span>Phone: 034 2333 344</span>
+                            </div>
+                            <div>
+                                <span>Info@moontheme.net</span>
+                            </div>
+                        </div>
+                        <div class="banner__content">
+                            <div class="container">
+                                <div class="banner__content__item d-flex justify-content-center">
+                                    <img src="http://themes.g5plus.net/spring-fashion/wp-content/uploads/revslider/Fashion/slider-03.png">
+                                </div>
+                                <div class="banner__content__item-info">
+                                    <div class="uppercase">Featured Collections</div>
+                                    <div class="main-info">The best<br> Collection Summer</div>
+                                    <a class="uppercase"><span>Shop now</span></a>
+                                </div>
+                                <div class="banner__content__item-info__right">
+                                    <span>Fashion</span><br> <span>Show</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="scroll-down d-flex justify-content-center">
+                <img src="http://themes.g5plus.net/spring-fashion/wp-content/uploads/revslider/Fashion/slider-06.png">
+            </div>
+        </div>
+        <div class="primary-content">
+            <div class="wpb_wrapper container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8">
+                        <p class="primary-font text-italic fs-24 heading-color sm-text-left" style="letter-spacing: 0.2em; line-height: 37px; text-align: center;font-family: 'Playfair Display', serif;">
+                            The most important to a business is having <span class="accent-color" style="color: #A2D299;">Happy Customers</span>. We love and give them our best services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#carouselExampleIndicators').on('slid.bs.carousel', function (e) {
+            const activeEle = document.querySelector('.carousel-indicators li.active')
+            const color = activeEle.getAttribute('data-color')
+            $('.gf-wrapper').css('background', `linear-gradient(90deg, #defae3 50%, ${color} 50%)`)
+        })
+
+    </script>
+</body> 
+</html>
