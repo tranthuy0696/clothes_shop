@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clothes Shop</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -15,6 +16,7 @@
             color: #7d7d7d;
             background-color: #fff;
             border-color: #ebebeb;
+            font-family: 'Lato', sans-serif;
         }
         .gf-wrapper {
             position: relative;
@@ -197,7 +199,36 @@
             font-style: italic;
             /* font-family: 'Playfair Display', serif; */
         }
-
+        .more-contact-info .ib {
+            border: 1px solid #f3f3f3;
+            height: 170px;
+            width: 100%;
+            color: #333333;
+        }
+        .more-contact-info .ib:hover {
+            box-shadow: 8px 10px 29.86px 2.14px rgba(192,205,211,0.56);
+        }
+        .more-contact-info .ib .ib-shape {
+            margin-right: 20px;
+        }
+        .more-contact-info .ib .ib-content p:last-child {
+            margin: 0;
+        }
+        .more-contact-info .ib-shape span i{
+            font-size: 60px;
+            color: #F26C4F;
+        }
+        .main-product__tab {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .main-product__tab li, .main-product__tab li a{
+            list-style: none;
+            text-decoration: none;
+            color: #333333;
+            font-size: 30px;
+        }
         .scroll-down img {
             height: 20px;
         }
@@ -364,8 +395,68 @@
             <div class="wpb_wrapper container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-8">
-                        <p class="primary-font text-italic fs-24 heading-color sm-text-left" style="letter-spacing: 0.2em; line-height: 37px; text-align: center;font-family: 'Playfair Display', serif;">
+                        <p class="primary-font font-italic heading-color text-center text-sm-left" style="letter-spacing: 0.2em; line-height: 37px; font-family: 'Playfair Display', serif;">
                             The most important to a business is having <span class="accent-color" style="color: #A2D299;">Happy Customers</span>. We love and give them our best services</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-center">
+                        <span class="font-weight-bold">MARRY JUlIE</span> – 
+                        <span class="font-italic">Ceo Spring Store</span>
+                    </p>
+                </div>
+                <div class="more-contact-info">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                           <div class="ib d-flex justify-content-center align-items-center">
+                            <div class="ib-shape">
+                                <span><i class="fas fa-shuttle-van"></i></span>
+                            </div>
+                            <div class="ib-content">
+                                <p>FREE SHIPPING</p>
+                                <p class="font-weight-bold">EVERY DAY, EVERY ORDER</p>
+                                <p>All order over $100</p>
+                            </div>
+                           </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="ib d-flex justify-content-center align-items-center">
+                             <div class="ib-shape">
+                                 <span><i class="fas fa-phone-volume"  style="color: #87dc96;"></i></span>
+                             </div>
+                             <div class="ib-content">
+                                 <p>FREE SHIPPING</p>
+                                 <p class="font-weight-bold">EVERY DAY, EVERY ORDER</p>
+                                 <p>All order over $100</p>
+                             </div>
+                            </div>
+                         </div>
+                         <div class="col-md-4 col-sm-12">
+                            <div class="ib d-flex justify-content-center align-items-center">
+                             <div class="ib-shape">
+                                 <span><i class="fas fa-coins" style="color: #6ADCC6;"></i></span>
+                             </div>
+                             <div class="ib-content">
+                                 <p>FREE SHIPPING</p>
+                                 <p class="font-weight-bold">EVERY DAY, EVERY ORDER</p>
+                                 <p>All order over $100</p>
+                             </div>
+                            </div>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="main-product">
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-8 col-sm-10">
+                            <ul class="d-flex justify-content-between main-product__tab">
+                                <li class="active"> <a data-id="1423799530" href="#" class="no-animation transition03 gsf-link" title="Best sellers">Best sellers</a></li>
+                                <li class=""> <a data-id="1165438051" href="#" class="no-animation transition03 gsf-link" title="New Arrivals">New Arrivals</a></li>
+                                <li class=""> <a data-id="348964252" href="#" class="no-animation transition03 gsf-link" title="Hot Items">Hot Items</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
